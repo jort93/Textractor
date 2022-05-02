@@ -15,6 +15,7 @@
 #define PORTUGUESE
 #define KOREAN
 #define FRENCH
+#define GERMAN
 #endif
 
 // If you are updating a previous translation see https://github.com/Artikash/Textractor/issues/313
@@ -1374,6 +1375,161 @@ Ce fichier doit être encodé en Unicode (UTF-16 Little Endian).)";
 	THREAD_LINK_TO = u8"Nombre du thread du lien a";
 	HEXADECIMAL = u8"Hexadécimal";
 #endif // FRENCH
+
+#ifdef GERMAN
+	NATIVE_LANGUAGE = "German";
+	ATTACH = u8"Spiel anfügen";
+	LAUNCH = u8"Spiel starten";
+	DETACH = u8"Spiel trennen";
+	ADD_HOOK = u8"Hook hinzufügen";
+	SAVE_HOOKS = u8"Hook(s) speichern";
+	SETTINGS = u8"Einstellungen";
+	FORGET = u8"Spiel vergessen";
+	REMOVE_HOOKS = u8"Hook(s) entfernen";
+	SEARCH_FOR_HOOKS = u8"Hook(s) suchen";
+	EXTENSIONS = u8"Erweiterungen";
+	SELECT_PROCESS = u8"Prozess auswählen";
+	ATTACH_INFO = u8R"(Falls der anzufügende Prozess nicht sichtbar ist, versuche das Programm mit Adminrechten zu starten. 
+Außerdem ist es möglich die Prozess-ID einzugeben.)";
+	SELECT_PROCESS_INFO = u8"Falls du den Dateinamen des Prozesses manuell eintippst, nutze den absoluten Pfad.";
+	FROM_COMPUTER = u8"Vom Computer auswählen";
+	PROCESSES = u8"Prozesse (*.exe)";
+	CODE_INFODUMP = u8R"(Read Code eingeben
+R{S|Q|V|M}[null_length<][codepage#]@addr
+ODER
+Hook Code eingeben
+H{A|B|W|H|S|Q|V|M}[F][null_length<][N][codepage#][padding+]data_offset[*deref_offset][:split_offset[*deref_offset]]@addr[:module[:func]]
+Alle Nummern außer Codepage/null_length in Hexadezimal
+Standardmäßig wird Codepage 932 (Shift-JIS) verwendet, aber dies kann in den Einstellungen geändert werden.
+A/B: Codepage Char little/big endian
+W: UTF-16 Char
+H: Zwei hex Bytes
+S/Q/V/M: Codepage/UTF-16/UTF-8/hex String
+F: Strings als vollständige Textzeilen behandeln
+N: Kontext nicht verwenden
+null_length: Länge des  Nullabschlusszeichens für Strings
+padding: Länge für Padding vor Strings (C struct { int64_t size; char string[500]; } benötigt padding = 8)
+Negative Werte für data_offset/split_offset stehen für die Register 
+-4 für EAX, -8 für ECX, -C für EDX, -10 für EBX, -14 für ESP, -18 für EBP, -1C für ESI, -20 für EDI
+-C für RAX, -14 für RBX, -1C für RCX, -24 für RDX, und so weiter für RSP, RBP, RSI, RDI, R8-R15
+* means dereference pointer+deref_offset)";
+	SAVE_SETTINGS = u8"Einstellungen speichern";
+	EXTEN_WINDOW_INSTRUCTIONS = u8R"(Rechtsklicke die Liste um eine Erweiterung hinzuzufügen oder zu entfernen
+Per Drag and Drop lassen sich die Erweiterungen in der Liste neu ordnen
+(Erweiterungen werden von Oben nach Unten verwendet, die Reihenfolge ist wichtig))";
+	ADD_EXTENSION = u8"Erweiterung hinzufügen";
+	REMOVE_EXTENSION = u8"Erweiterung entfernen";
+	INVALID_EXTENSION = u8"%1 ist eine ungültige Erweiterung";
+	CONFIRM_EXTENSION_OVERWRITE = u8"Eine andere version dieser Erweiterung existiert bereits, möchtest du diese löschen und überschreiben?";
+	USE_JP_LOCALE = u8"Japanische Lokale emulieren?";
+	FAILED_TO_CREATE_CONFIG_FILE = u8"Konfigurationsdatei erstellen fehlgeschlagen \"%1\"";
+	HOOK_SEARCH_UNSTABLE_WARNING = u8"Die Suche nach Hooks ist instabil! Stelle dich dadrauf ein dass das Spiel abstürzt!";
+	SEARCH_CJK = u8"Suche nach Chinesisch/Japanisch/Koreanisch";
+	SEARCH_PATTERN = u8"Suchmuster (Hex Byte Array)";
+	SEARCH_DURATION = u8"Suchdauer (ms)";
+	SEARCH_MODULE = u8"Suche innerhalb von Modul";
+	PATTERN_OFFSET = u8"Offset von Beginn des Musters";
+	MAX_HOOK_SEARCH_RECORDS = u8"Suchergebnis-Begrenzung";
+	MIN_ADDRESS = u8"Minimale Addresse (hex)";
+	MAX_ADDRESS = u8"Maximale Addresse (hex)";
+	STRING_OFFSET = u8"String Offset (hex)";
+	HOOK_SEARCH_FILTER = u8"Ergebnisse müssen dieser regex entsprechen";
+	TEXT = u8"Text";
+	CODEPAGE = u8"Codepage";
+	SEARCH_FOR_TEXT = u8"Nach spezifischem Text suchen";
+	START_HOOK_SEARCH = u8"Starte Hook-Suche";
+	SAVE_SEARCH_RESULTS = u8"Suchergebnisse speichern";
+	TEXT_FILES = u8"Text (*.txt)";
+	DOUBLE_CLICK_TO_REMOVE_HOOK = u8"Doppelklicke einen Hook um ihn zu entfernen";
+	FILTER_REPETITION = u8"Filter-Wiederholung";
+	AUTO_ATTACH = u8"Automatisch anfügen";
+	ATTACH_SAVED_ONLY = u8"Automatisch anfügen (nur Gespeicherte)";
+	SHOW_SYSTEM_PROCESSES = u8"Systemprozesse anzeigen";
+	DEFAULT_CODEPAGE = u8"Standardmäßige Codepage";
+	FLUSH_DELAY = u8"Flush-Verzögerung";
+	MAX_BUFFER_SIZE = u8"Maximale Puffer-Größe";
+	MAX_HISTORY_SIZE = u8"Maximale Verlauf-Größe";
+	CONFIG_JP_LOCALE = u8"Mit Japanischer Lokale Starten";
+	CONSOLE = L"Konsole";
+	CLIPBOARD = L"Zwischenablage";
+	ABOUT = L"Textractor " ARCH L" v" VERSION LR"( Erstellt von: Artikash (email: akashmozumdar@gmail.com)
+Projekt Homepage: https://github.com/Artikash/Textractor
+Tutorial Video: https://github.com/Artikash/Textractor/blob/master/docs/TUTORIAL.md
+FAQ: https://github.com/Artikash/Textractor/wiki/FAQ
+Bitte kontaktiere Artikash mit jeglichen Problemen, Anregungen oder Fragen die Textractor betreffen
+Du kannst dies über die Homepage (Issue Sektion) oder per email tun
+Der Quellcode ist unter der GPLv3 Lizenz auf der Homepage des Projektes verfügbar
+Wenn dir das Projekt gefällt erzähle jedem davon! AGTH hat ausgedient :))";
+	CL_OPTIONS = LR"(usage: Textractor [-p{process ID|"process name"}]...
+example: Textractor -p4466 -p"My Game.exe" tries to inject processes with ID 4466 or with name My Game.exe)";
+	UPDATE_AVAILABLE = L"Update verfügbar, lade es hier runter: https://github.com/Artikash/Textractor/releases";
+	ALREADY_INJECTED = L"Textractor: bereits injiziert";
+	NEED_32_BIT = L"Textractor: inkompatible Architektur: nur Textractor x86 kann in diesen Prozess injiziert werden";
+	NEED_64_BIT = L"Textractor: inkompatible Architektur: nur Textractor x64 kann in diesen Prozess injiziert werden";
+	INJECT_FAILED = L"Textractor: injizieren fehlgeschlagen";
+	LAUNCH_FAILED = L"Textractor: starten fehlgeschlagen";
+	INVALID_CODE = L"Textractor: ungültiger Code";
+	INVALID_CODEPAGE = L"Textractor: konnte Text nicht konvertieren (ungültige Codepage?)";
+	PIPE_CONNECTED = u8"Textractor: Pipe verbunden";
+	INSERTING_HOOK = u8"Textractor: Hook eingefügt: %s";
+	REMOVING_HOOK = u8"Textractor: Hook entfernt: %s";
+	HOOK_FAILED = u8"Textractor: Hook einfügen fehlgeschlagen";
+	TOO_MANY_HOOKS = u8"Textractor: zu viele Hooks: einfügen fehlgeschlagen";
+	HOOK_SEARCH_STARTING = u8"Textractor: starte Suche nach Hooks";
+	HOOK_SEARCH_INITIALIZING = u8"Textractor: initialisiere Suche nach Hooks (%f%%)";
+	NOT_ENOUGH_TEXT = u8"Textractor: nicht genug Text um genau zu suchen";
+	HOOK_SEARCH_INITIALIZED = u8"Textractor: hat suche mit %zd Hooks initialisiert";
+	MAKE_GAME_PROCESS_TEXT = u8"Textractor: bitte klicke im Fenster des Spieles herum um es dazu zu bringen in den nächsten %d Sekunden Text zu verarbeiten";
+	HOOK_SEARCH_FINISHED = u8"Textractor: Suche nach Hooks, %d Ergebnisse gefunden";
+	OUT_OF_RECORDS_RETRY = u8"Textractor: keine weiteren Ergebnisse verfügbar, bitte versuche es erneut wenn die Ergebnisse schlecht sind. (Die normale Anzahl der Ergebnisse wurde erhöht)";
+	FUNC_MISSING = u8"Textractor: Funktion nicht vorhanden";
+	MODULE_MISSING = u8"Textractor: Modul nicht vorhanden";
+	GARBAGE_MEMORY = u8"Textractor: Speicher ändert sich ständig, Lesen ist nutzlos";
+	SEND_ERROR = u8"Textractor: Sender FEHLER (vermutlich instabiler/fehlerhafter H-Code)";
+	READ_ERROR = u8"Textractor: Leser FEHLER (vermutlich fehlerhafter R-Code)";
+	HIJACK_ERROR = u8"Textractor: Hijack FEHLER";
+	COULD_NOT_FIND = u8"Textractor: konnte Text nicht finden";
+	TRANSLATE_TO = u8"Übersetzen zu";
+	TRANSLATE_FROM = u8"Übersetzen von";
+	FILTER_GARBAGE = u8"Wertlose Zeichen rausfiltern";
+	TRANSLATE_SELECTED_THREAD_ONLY = u8"Nur ausgewählten Text-Thread übersetzen";
+	RATE_LIMIT_ALL_THREADS = u8"Ratenbegrenzer aktivieren";
+	RATE_LIMIT_SELECTED_THREAD = u8"Ratenbegrenzung für ausgewählten Text-Thread";
+	USE_TRANS_CACHE = u8"Übersetzungs-Cache verwenden";
+	MAX_TRANSLATIONS_IN_TIMESPAN = u8"Maximale Anzahl der Übersetzunganfragen in der Zeitspanne";
+	TIMESPAN = u8"Zeitspanne (ms)";
+	TOO_MANY_TRANS_REQUESTS = L"Ratenlimit überschritten: weitere Übersetzungsanfragen werdem abgelehnt";
+	TRANSLATION_ERROR = L"Fehler bei der Übersetzung";
+	USE_PREV_SENTENCE_CONTEXT = u8"Letzten Satz als Kontext verwenden";
+	API_KEY = u8"API Schlüssel";
+	CHROME_LOCATION = u8"Google Chrome Speicherort";
+	START_DEVTOOLS = u8"DevTools starten";
+	STOP_DEVTOOLS = u8"DevTools anhalten";
+	HIDE_CHROME = u8"Chrome Fenster verstecken";
+	DEVTOOLS_STATUS = u8"DevTools Status";
+	AUTO_START = u8"Automatisch starten";
+	ERROR_START_CHROME = L"starten von Chrome oder damit verbinden, fehlgeschlagen";
+	EXTRA_WINDOW_INFO = u8R"(Rechtsklicke um die Einstellungen zu ändern
+Klicke und ziehe am Rand von Fenstern um sie zu bewegen, oder an der unteren rechten Ecke um die Größe zu ändern)";
+	MAX_SENTENCE_SIZE = u8"Maximale Größe von Sätzen";
+	TOPMOST = u8"Immer im Vordergrund";
+	DICTIONARY = u8"Wörterbuch";
+	DICTIONARY_INSTRUCTIONS = u8R"(Diese Datei wird nur für die "Wörterbuch" Funktion der "Extra Window" Erweiterung verwendet.
+Sie verwendet ein besonderes, textractor-spezifisches Format und ist nicht dafür gedacht manuell bearbeitet zu werden.
+Du solltest online nach einem Wörterbuch in diesem Format suchen (https://github.com/Artikash/Textractor-Dictionaries/releases ist ein guter Anfang).
+Alternativ, wenn du ein Programmierer bist, kannst du ein Skript schreiben um mithilfe der folgenden Informationen ein Wörterbuch eines anderen Formates in dieses umzuwandeln.  
+Nachdem du ein Wörterbuch hast, bewege den Mauszeiger über Text, um ihn in Extra Window anzuzeigen. Du kannst durch alle passenden Definitionen scrollen.
+Definitionen sind so formatiert:|TERM|Hola<<ignored|TERM|hola|TERM|Bonjour|TERM|bonjour|DEFINITION|hello|END|
+Der Begriff und die Definition können Rich Text enthalten (https://doc.qt.io/qt-5/richtext-html-subset.html) welcher korrekt formatiert wird.
+Flexionen sind so formatiert:|ROOT|1<<noun|INFLECTS TO|(\w*)s|NAME| plural|END|
+Textractor überprüft ob ein ein Begriff zu der Regex der Flexion passt, und wenn dies der Fall ist, rekursiv nach dem Wurzel-Begriff suchen.
+Der Wurzel-Begriff wird generiert indem (0 étant remplacé par la correspondance entière).
+This process can easily result in infinite loops and/or stack overflows. It's your job to avoid that.
+Inflection regex uses QRegularExpression (https://doc.qt.io/qt-5/qregularexpression.html) unicode syntax.
+Textractor will display the final root term as well as all inflections used to get to that root term.
+However, the text in a term after << is ignored when displaying. This is intended to store part-of-speech information.
+This file must be encoded in UTF-8.)";
+#endif // GERMAN
 };
 
 static auto _ = (Localize(), 0);
